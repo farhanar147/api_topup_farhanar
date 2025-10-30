@@ -13,7 +13,6 @@ const router = express.Router();
  * @swagger
  * tags:
  *   - name: Transaction
- *     description: Endpoint untuk saldo, topup, transaksi dan history
  */
 
 /**
@@ -34,7 +33,7 @@ router.get("/balance", authMiddleware, getSaldo);
  * @swagger
  * /transaction:
  *   post:
- *     summary: Melakukan transaksi (mengurangi saldo)
+ *     summary: Melakukan transaksi
  *     tags: [Transaction]
  *     security:
  *       - bearerAuth: []
@@ -62,7 +61,7 @@ router.post("/transaction", authMiddleware, createTransaction);
  * @swagger
  * /topup:
  *   post:
- *     summary: Top-up saldo user
+ *     summary: Top-up saldo
  *     tags: [Transaction]
  *     security:
  *       - bearerAuth: []
@@ -90,7 +89,7 @@ router.post("/topup", authMiddleware, topup);
  * @swagger
  * /transaction/history:
  *   get:
- *     summary: Mendapatkan history transaksi pengguna
+ *     summary: History transaksi pengguna
  *     tags: [Transaction]
  *     security:
  *       - bearerAuth: []
