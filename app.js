@@ -19,10 +19,10 @@ const swaggerOptions = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "TestAPI Nutech - Farhan Ar Rasyid",
+      title: "Test API Nutech - Farhan Ar Rasyid",
       version: "1.0.0",
       description:
-        "REST API untuk Registrasi, Login, Cek Saldo, Top Up, dan Transaksi",
+        "API untuk Registrasi, Login, Cek Saldo, Top Up, dan Transaksi",
     },
     servers: [{ url: "http://localhost:3000", description: "Local Server" }],
     components: {
