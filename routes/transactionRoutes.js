@@ -13,12 +13,12 @@ const router = express.Router();
  * @swagger
  * tags:
  *   - name: Transaction
- *     description: Endpoint untuk dompet digital (saldo, topup, transaksi)
+ *     description: Endpoint untuk saldo, topup, transaksi dan history
  */
 
 /**
  * @swagger
- * /api/transaction/balance:
+ * /balance:
  *   get:
  *     summary: Menampilkan saldo pengguna
  *     tags: [Transaction]
@@ -32,7 +32,7 @@ router.get("/balance", authMiddleware, getSaldo);
 
 /**
  * @swagger
- * /api/transaction/transaction:
+ * /transaction:
  *   post:
  *     summary: Melakukan transaksi (mengurangi saldo)
  *     tags: [Transaction]
@@ -60,7 +60,7 @@ router.post("/transaction", authMiddleware, createTransaction);
 
 /**
  * @swagger
- * /api/transaction/topup:
+ * /topup:
  *   post:
  *     summary: Top-up saldo user
  *     tags: [Transaction]
@@ -88,7 +88,7 @@ router.post("/topup", authMiddleware, topup);
 
 /**
  * @swagger
- * /api/transaction/history:
+ * /transaction/history:
  *   get:
  *     summary: Mendapatkan history transaksi pengguna
  *     tags: [Transaction]
@@ -136,6 +136,6 @@ router.post("/topup", authMiddleware, topup);
  *                         type: string
  *                         format: date-time
  */
-router.get("/history", authMiddleware, getHistory);
+router.get("/transaction/history", authMiddleware, getHistory);
 
 export default router;

@@ -12,7 +12,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/auth/register:
+ * /auth/register:
  *   post:
  *     summary: Registrasi user baru
  *     description: Endpoint ini digunakan untuk mendaftar user baru. Semua field wajib diisi, password minimal 8 karakter, mengandung huruf besar, huruf kecil, dan angka.
@@ -80,7 +80,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/auth/login:
+ * /auth/login:
  *   post:
  *     summary: Login user
  *     description: Endpoint ini digunakan untuk login dan mendapatkan JWT token.

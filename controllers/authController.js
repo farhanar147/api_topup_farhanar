@@ -52,10 +52,17 @@ export const register = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await db.query(
+    const [result] = await db.query(
       "INSERT INTO users (email, first_name, last_name, password) VALUES (?, ?, ?, ?)",
       [email, first_name, last_name, hashedPassword]
     );
+
+    const userId = result.insertId;
+
+    await db.query("INSERT INTO wallets (users_id, saldo) VALUES (?, ?)", [
+      userId,
+      0,
+    ]);
 
     res.json({
       status: 0,

@@ -38,10 +38,8 @@ const swaggerOptions = {
 const swaggerSpec = swaggerJSDoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-app.use("/api/auth", authRoutes);
-app.use("/api/transaction", transactionRoutes);
-
-app.get("/", (_, res) => res.send("TestAPI Nutech - Farhan Arrasyid"));
+app.use("/auth", authRoutes);
+app.use("/", transactionRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Endpoint tidak ditemukan" });
