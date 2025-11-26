@@ -51,13 +51,13 @@ const router = express.Router();
  *                   example: 0
  *                 message:
  *                   type: string
- *                   example: "Registrasi berhasil"
+ *                   example: "Registrasi berhasil banget"
  *                 data:
  *                   type: object
  *                   nullable: true
  *                   example: null
  *       400:
- *         description: Input tidak valid / Email sudah terdaftar
+ *         description: Input tidak valid / Email sudah terdaftar Masuk Aja
  *         content:
  *           application/json:
  *             schema:
